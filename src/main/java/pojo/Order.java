@@ -1,12 +1,16 @@
 package pojo;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 import java.util.List;
 
 public class Order {
 
     private List<String> ingredients;
-    private String _id;
+    @JsonAlias({"_id"})
+    private String id;
     private String status;
     private String name;
     private int number;
@@ -21,12 +25,12 @@ public class Order {
         this.ingredients = ingredients;
     }
 
-    public String get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getStatus() {
